@@ -157,3 +157,74 @@ filter()和every()类似，传入一个返回值为布尔类型的函数。和ev
 在例子中，创建一个对象，用于保存观测到的周最高气温。该对象有两个方法，一个方法用来增加一条新的气温记录，另外一个方法用来计算存储在对象中的平均气温。
 ![](http://i.imgur.com/DqsdbGj.png)
 
+## 列表
+列表是一组有序的数据，每个列表中的数据项称为元素，列表拥有那些属性，应该执行什么操作。
+#### 列表的抽象数据类型定义：
+![](http://i.imgur.com/T4MKTyk.png)
+##### append:给列表添加元素
+![](http://i.imgur.com/N4VrElK.png)
+##### remove:从列表中删除元素
+splice()方法可以简化这一过程，首先从find()开始。
+![](http://i.imgur.com/XOlLtD8.png)
+##### find:在列表中查找某一元素
+find()方法通过对数组对象dataStore进行迭代，查找给定的元素，如果找到的话，就返回该元素在列表中的位置，否则返回-1。
+![](http://i.imgur.com/72B9x0n.png)
+##### length:列表中有多少个元素
+![](http://i.imgur.com/E6BKegB.png)
+##### toString:显示列表中的元素
+![](http://i.imgur.com/NYg1NgD.png)
+##### insert:向列表中插入一个元素
+![](http://i.imgur.com/tuwp279.png)
+##### clear:清空列表中所有元素
+![](http://i.imgur.com/eMVITjL.png)
+##### contains:判断给定值是否在列表中
+![](http://i.imgur.com/MBxKUsJ.png)
+## 栈
+栈是一种特殊的列表，后入先出的数据结构。
+
+
+对栈的操作：
+- 入栈使用push()
+- 出栈使用pop()，调用该方法后，栈顶元素永久的被删除了
+- peek()返回栈顶元素，但是不删除它,如果是空栈，再返回就是undefined。
+
+
+定义一个Stack类的构造函数
+
+![](http://i.imgur.com/XJohLIL.png)
+##### push()
+![](http://i.imgur.com/5XvIsUX.png)
+##### pop()
+![](http://i.imgur.com/vPRtlUc.png)
+##### peek()
+![](http://i.imgur.com/3YkHJb8.png)
+
+## 使用Stack类
+### 数制间的相互转换
+##### 将数字转换为二进制和八进制
+
+![](http://i.imgur.com/LMbyma7.png)
+### 回文
+![](http://i.imgur.com/lLrkKbl.png)
+### 递归演示
+##### 使用递归模拟过程
+![](http://i.imgur.com/irXqPmB.png)
+
+## 队列
+队列是一种列表，不同的是队列只能在队尾插入元素，在队首删除元素。
+
+
+定义一个队列的构造函数
+![](http://i.imgur.com/1KMwwQ3.png)
+##### enqueue()
+![](http://i.imgur.com/P52cUZa.png)
+##### dequeue()
+![](http://i.imgur.com/P4qZyMT.png)
+##### front()
+![](http://i.imgur.com/Z1dDxC0.png)
+##### back()
+![](http://i.imgur.com/croWK8W.png)
+##### toString()
+![](http://i.imgur.com/pO5lVxC.png)
+##### empty()
+![](http://i.imgur.com/wqcgWZn.png)
