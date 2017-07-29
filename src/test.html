@@ -338,7 +338,7 @@ function fact(n){
 	while(n>1){
 		s.push(n--);
 	}
-	var product = 1;
+	vr product = 1;
 	while(s.length()>0){
 		product *= s.pop();
 	}
@@ -381,9 +381,25 @@ function empty(){
 		return false;
 	}
 }
+
+//冒泡排序
+function swap(arr,index1,index2){
+    var temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+}
+function Maopao(){
+	var num = this.dataStore.length;
+	var t;
+	for(var outer = num;outer>=2;--outer){
+		for(var inner = 0;inner<=outer-1;++inner){
+			if(this.dataStore[inner] > this.dataStore[inner+1]){
+				swap(this.dataStore,inner,inner+1);
+			}
+		}
+	}
+}
+
 </script>
-
-
-
 </body>
 </html>

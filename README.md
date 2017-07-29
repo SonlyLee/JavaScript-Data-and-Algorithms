@@ -228,3 +228,9 @@ find()方法通过对数组对象dataStore进行迭代，查找给定的元素�
 ![](http://i.imgur.com/pO5lVxC.png)
 ##### empty()
 ![](http://i.imgur.com/wqcgWZn.png)
+
+## 排序算法
+#### swap函数
+![](http://i.imgur.com/1xBZV84.png)
+### 冒泡排序
+![](http://i.imgur.com/eNVVnmm.png)
