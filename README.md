@@ -159,6 +159,7 @@ filter()和every()类似，传入一个返回值为布尔类型的函数。和ev
 
 ## 列表
 列表是一组有序的数据，每个列表中的数据项称为元素，列表拥有那些属性，应该执行什么操作。
+
 #### 列表的抽象数据类型定义：
 ![](http://i.imgur.com/T4MKTyk.png)
 ##### append:给列表添加元素
@@ -215,6 +216,7 @@ find()方法通过对数组对象dataStore进行迭代，查找给定的元素�
 
 
 定义一个队列的构造函数
+
 ![](http://i.imgur.com/1KMwwQ3.png)
 ##### enqueue()
 ![](http://i.imgur.com/P52cUZa.png)
@@ -230,7 +232,85 @@ find()方法通过对数组对象dataStore进行迭代，查找给定的元素�
 ![](http://i.imgur.com/wqcgWZn.png)
 
 ## 排序算法
-#### swap函数
-![](http://i.imgur.com/1xBZV84.png)
+
 ### 冒泡排序
-![](http://i.imgur.com/eNVVnmm.png)
+
+冒泡排序算法的流程如下：
+
+- 比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+- 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
+- 针对所有的元素重复以上的步骤，除了最后一个。
+- 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。
+
+![](http://i.imgur.com/ECmEp7j.gif)
+
+    function maopao(arr){
+        var len = arr.length;
+ 		for(var i=0;i<len;i++){
+			for(var j=0;j<len-1-i;j++){
+				if(arr[j]>arr[j+1]){
+					var t = arr[j+1];
+					arr[j+1] = arr[j];
+					arr[j] = t;
+				}
+			}
+		}
+		return arr;
+    }
+
+
+### 插入排序
+
+插入排序算法的流程如下：
+
+- 从第一个元素开始，该元素可以认为已经被排序
+- 取出下一个元素，在已经排序的元素序列中向后扫描
+- 如果该元素（已排序）大于新元素，将该元素移动到下一个位置
+- 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置
+- 将新元素插入到该位置后
+- 重复步骤2~5
+
+其实，有点类似打扑克。
+
+![](http://i.imgur.com/TVwdCNK.gif)
+
+    function charu(arr){
+       var len = arr.length;
+       var pre,current;
+       for(var i=1;i<len;i++){
+          pre = i-1;
+          current = a[i];
+          while(pre>=0 && arr[pre]>current){
+             arr[pre+1] = arr[pre];
+             pre--;
+		  }
+          arr[pre+1] = current;
+	   }
+	   return arr;
+    }
+
+
+### 选择排序
+
+选择排序算法流程：
+
+从数组的开头开始，将第一个元素和其他的元素进行比较，检查完所有元素后，最小的元素会被放到数组的第一个位置，然后算法会从第二个位置继续，这个过程一直进行，当进行到数组的倒数第二个位置时，即可完成。
+
+![](http://i.imgur.com/Qp8zF5l.gif)
+
+    function xuanze(arr){
+       var len = arr.length;
+       var mminIndex,t;
+       for(var i=0;i<len-1;i++){
+          minIndex = i;
+          for(var j=i+1;j<len;j++){
+             if(arr[j]<arr[minIndex]){
+				minIndex = j;
+             }
+          }
+          t = arr[i];
+          arr[i] = arr[minIndex];
+          arr[minIndex] = t;
+       }
+       return arr;
+    }
