@@ -314,3 +314,46 @@ find()方法通过对数组对象dataStore进行迭代，查找给定的元素�
        }
        return arr;
     }
+
+
+### 快速排序
+
+快速排序的流程：
+
+- 从数列中挑出一个元素，成为基准。
+- 重新排列数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任一边）。在这个分区结束后，该基准处于数列的中间位置。这个称为分区操作。
+- 递归地把小于基准值元素的子数列和大于基准值元素的子数列排序。
+递归到最底部时，数列的大小是零或一，也就是已经排序好了。这个算法一定会结束，因为在每次的迭代中，它至少会把一个元素摆到它最后的位置去。
+
+![](http://i.imgur.com/9sPh5yT.gif)
+
+    function quickly(arr,left,right){
+        var len = arr.length;
+        partitionIndex;
+        left = typeof left != 'number' ? 0 : left;
+        right = typeof right != 'number' ? len-1 : right;
+        if(left < right){
+            partitionIndex = partition(arr,left,right);
+            quickly(arr,left,partitionIndex-1);
+            quickly(arr,partitionIndex+1,right);
+        }
+        return arr;
+    }
+    //分区操作
+    function partition(arr,left,right){
+        var pivot = left;              //设定基准值(pivot)
+        index = pivot + 1;
+        for(var i = index;i<=right;i++){
+           if(arr[i]<arr[pivot]){
+              swap(arr,i,index);
+              index++;
+           }
+        }
+        swap(arr,pivot,index-1);
+        return index-1;
+    }
+    function swap(arr,i,j){
+        var temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
